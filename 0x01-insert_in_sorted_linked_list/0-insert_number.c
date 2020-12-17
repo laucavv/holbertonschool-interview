@@ -34,11 +34,11 @@ listint_t *insert_node(listint_t **head, int number)
 			return (node);
 		}
 		tmp = tmp->next;
-
-	}
-	if (tmp == NULL)
+		if (tmp->next == NULL)
 	{
 		return (add_nodeint_end(&tmp, number));
+	}
+
 	}
 	return (NULL);
 }

@@ -9,18 +9,17 @@ listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *node = NULL, *tmp = NULL, *aux = NULL;
 
-
-	if (head == NULL && (*head) == NULL)
-	{
-		return (add_nodeint_end(head, number));
-	}
-
 	node = malloc(sizeof(listint_t));
 	if (node == NULL)
 	{
 		return (NULL);
 	}
 	node->n = number;
+	if ((*head) == NULL)
+	{
+		node->next = NULL;
+		return (node);
+	}
 	tmp = *head;
 	if ((*head)->n  > number)
 	{

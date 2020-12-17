@@ -39,12 +39,11 @@ listint_t *insert_node(listint_t **head, int number)
 			return (node);
 		}
 		tmp = tmp->next;
+		if (tmp->next == NULL)
+		{
+			break;
+		}
 
 	}
-	if (tmp == NULL)
-	{
 		return (add_nodeint_end(&tmp, number));
-	}
-	
-	return (NULL);
 }
